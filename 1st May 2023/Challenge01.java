@@ -1,1 +1,1 @@
-// Write a Java program to display the following : Jane lives in (city) and works at (bank). She spends (amount) every month and is (age) years old.
+// Write a Java program to display the following : (name) lives in (city) and works at (bank/company). He/She spends (amount) every month and is (age) years old.
