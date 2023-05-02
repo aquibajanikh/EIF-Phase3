@@ -1,0 +1,5 @@
+Q1. Define two positive integers. Write a program to find the value of one number raised to the power of another.
+
+Q2. Write a program that reads a set of integers, and then prints the sum of the even and odd integers.
+
+Q3. Write a program that generates a random number and asks the user to guess what the number is. If the user's guess is higher than the random number, the program should display "Too high, try again." If the user's guess is lower than the random number, the program should display "Too low, try again." The program should use a loop that repeats until the user correctly guesses the random number.
