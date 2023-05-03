@@ -1,5 +1,22 @@
-1. Write a SQL query to retrieve all the data from a table named "customers".
-2. Write a SQL query to retrieve the names and ages of all customers who are over 30 years old.
-3. Write a SQL query to retrieve the number of orders placed by each customer.
-4. Write a SQL query to retrieve the highest and lowest total amounts for all orders.
-5. Write a SQL query to delete all orders that have a total amount less than $500.00.
+-- 1. Write a SQL query to retrieve all the data from a table named "customers".
+-- SELECT * FROM Customers;
+
+
+-- 2. Write a SQL query to retrieve the names and ages of all customers who are over 30 years old.
+
+-- SELECT first_name, age FROM Customers WHERE age > 30;
+
+
+-- 3. Write a SQL query to retrieve the number of orders placed by each customer.
+
+-- SELECT customer_id, COUNT(customer_id) FROM Orders GROUP BY customer_id;
+
+
+-- 4. Write a SQL query to retrieve the highest and lowest total amounts for all orders.
+
+-- SELECT MIN(amount), MAX(amount) FROM Orders;
+
+
+-- 5. Write a SQL query to select all orders that have a total amount less than $500.00.
+
+-- SELECT * FROM Orders WHERE amount < 500;
