@@ -1,0 +1,5 @@
+1. Write a SQL query to retrieve all the data from a table named "customers".
+2. Write a SQL query to retrieve the names and ages of all customers who are over 30 years old.
+3. Write a SQL query to retrieve the number of orders placed by each customer.
+4. Write a SQL query to retrieve the highest and lowest total amounts for all orders.
+5. Write a SQL query to delete all orders that have a total amount less than $500.00.
