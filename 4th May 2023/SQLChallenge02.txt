@@ -1,0 +1,13 @@
+Q1. Write a SQL query to find the names of all the customers along with their order details.
+
+
+Q2. Write a SQL query to find the names of all the customers who have placed orders in the month of April.
+
+
+Q3. Write a SQL query to find the names of all the customers who have not placed any orders.
+
+
+Q4. Write a SQL query to find the names of all the customers along with the total amount they have spent on orders.
+
+
+Q5. Write a SQL query to find the names of all the customers who have placed orders with more than one product.
