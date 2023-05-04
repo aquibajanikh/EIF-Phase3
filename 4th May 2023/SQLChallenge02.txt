@@ -1,13 +1,15 @@
 Q1. Write a SQL query to find the names of all the customers along with their order details.
+SELECT c.first_name, c.last_name, o.item, o.amount FROM CUSTOMERS c JOIN Orders o ON c.customer_id = o.customer_id;
+
+Q2. Write a SQL query to find the names of all the customers who have placed orders for 400 and above.
+SELECT c.first_name, c.last_name, o.amount FROM Customers c LEFT JOIN Orders o ON c.customer_id = o.customer_id WHERE o.amount > 400;
 
 
-Q2. Write a SQL query to find the names of all the customers who have placed orders in the month of April.
-
-
-Q3. Write a SQL query to find the names of all the customers who have not placed any orders.
-
+Q3. Write a SQL query to find the names of all the customers who have not placed any orders
+SELECT c.first_name, c.last_name FROM Customers c LEFT JOIN Orders ON c.customer_id = Orders.customer_id WHERE Orders.order_id IS NULL;
 
 Q4. Write a SQL query to find the names of all the customers along with the total amount they have spent on orders.
+SELECT c.first_name, c.last_name, SUM(o.amount) FROM Customers c JOIN Orders o ON c.customer_id = o.customer_id GROUP BY o.customer_id;
 
-
-Q5. Write a SQL query to find the names of all the customers who have placed orders with more than one product.
+Q5. Write a SQL query to find the names of all the customers who have placed multiple orders.
+SELECT c.first_name, c.last_name FROM Customers c JOIN Orders o ON c.customer_id = o.customer_id GROUP BY o.customer_id HAVING COUNT(o.customer_id)>1;
