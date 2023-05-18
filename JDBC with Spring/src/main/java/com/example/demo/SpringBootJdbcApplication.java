@@ -1,11 +1,13 @@
-package com.example.demo;  
-import org.springframework.boot.SpringApplication;  
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;  
+package com.example.review_items;
 
-@SpringBootApplication (exclude = {DataSourceAutoConfiguration.class })
-public class SpringBootJdbcApplication {  
-    public static void main(String[] args) {  
-        SpringApplication.run(SpringBootJdbcApplication.class, args);  
-    }  
-}  
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class ReviewItemsApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(ReviewItemsApplication.class, args);
+	}
+
+}
