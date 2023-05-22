@@ -19,7 +19,10 @@ public class SpringBootJdbcController {
             System.out.print(request);
             return request;
         }
-    
+    // ObjectMapper mapper = new ObjectMapper();
+            // JsonNode extractedData = mapper.readTree(request);
+            // String username = extractedData.get("username").asText();
+            // System.out.print(username);
 
     // @Autowired  
     // JdbcTemplate jdbc;    
