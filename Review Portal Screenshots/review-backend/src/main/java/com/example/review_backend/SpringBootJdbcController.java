@@ -26,14 +26,13 @@ public class SpringBootJdbcController {
     public String storeData(@RequestBody String request) throws IOException{
             ObjectMapper myMapper = new ObjectMapper();
             JsonNode extractedData = myMapper.readTree(request);
+
             String username = extractedData.get("username").asText();
             String reviewContent = extractedData.get("reviewContent").asText();
             String reviewProduct = extractedData.get("reviewProduct").asText();
-            System.out.println(username);
-            System.out.println(reviewContent);
-            System.out.println(reviewProduct);
-            // replace with your table query
-            jdbc.execute("INSERT INTO `sys`.`all_items` (`item_id`, `item_title`, `item_price`) VALUES ("+username+", "+reviewContent+", "+reviewProduct+")");
+            
+            jdbc.execute("INSERT INTO `sys`.`all_reviews` (`review_item`, `review_username`, `review_content`) VALUES ('"+reviewProduct+"','"+username+"','"+reviewContent+"');");
+
             return"data inserted Successfully";  
         }
     
