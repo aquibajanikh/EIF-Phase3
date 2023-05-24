@@ -1,48 +1,34 @@
-package com.example.review_backend;
+package com.example.review_items;
 
 import java.io.IOException;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
-// import org.springframework.beans.factory.annotation.Autowired;
-// import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
+@RestController
+public class SpringBootJdbcController {
+    @Autowired
+    JdbcTemplate jdbc;
 
-@RestController 
-@CrossOrigin(origins = "*")  
-public class SpringBootJdbcController { 
+    @RequestMapping("/insert")
+    public String index(){
+        jdbc.execute("INSERT INTO `sys`.`all_items` (`item_title`, `item_price`) VALUES ('Narnia', '780');");
+        return "Insertion successful";
+    }    
 
-    @Autowired  
-            JdbcTemplate jdbc; 
-    
-    @RequestMapping( path="/addReview", method = RequestMethod.POST)
-    public String storeData(@RequestBody String request) throws IOException{
-            ObjectMapper myMapper = new ObjectMapper();
-            JsonNode extractedData = myMapper.readTree(request);
+    @RequestMapping(path = "/getItems", method = RequestMethod.GET)
+    public List<Item> getItems() throws IOException{
+        List<Item> items = jdbc.query("SELECT * FROM `sys`.`all_items`", new ItemMapper());
+        return items;
+    }
 
-            String username = extractedData.get("username").asText();
-            String reviewContent = extractedData.get("reviewContent").asText();
-            String reviewProduct = extractedData.get("reviewProduct").asText();
-            
-            jdbc.execute("INSERT INTO `sys`.`all_reviews` (`review_item`, `review_username`, `review_content`) VALUES ('"+reviewProduct+"','"+username+"','"+reviewContent+"');");
 
-            return"data inserted Successfully";  
-        }
-    
-
-    // @Autowired  
-    // JdbcTemplate jdbc;    
-    // @RequestMapping("/insert")  
-    // public String index(){  
-    //     jdbc.execute("INSERT INTO `sys`.`all_items` (`item_id`, `item_title`, `item_price`) VALUES ('4', 'GAqgqg', '750')");
-    //     return"data inserted Successfully";  
-    // }  
 }
 
+
+
+// http://localhost:8080/
